@@ -13,7 +13,7 @@ mongoose.connect(
 //using cheerio to parse through DOM
 
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 
 const app = express();
 
@@ -41,6 +41,6 @@ let routes = require("./routes/data_controllers");
 app.use(routes);
 
 
-app.listen(PORT, () => {
+app.listen(PORT, function() {
     console.log(`App running on port ${PORT} !`)
 })
