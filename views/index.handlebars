@@ -1,5 +1,33 @@
 <div class="container">
     <div class="jumbotron">
-        TESTING
+        <h1 class="display-4">Craiglist Job scraper</h1>
+        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to
+            featured content or information.</p>
+        <hr class="my-4">
+        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="#" role="button" onclick="fetchData();" id="webScrape">Scrape</a>
+        </p>
     </div>
+    <div class=" row text-center">
+        <dib class="col-12">
+            
+            <ul>
+                {{#each dbData}}
+
+                <p><span class="label job_List"></span>
+                    {{this.title}}
+                    {{this.url}}
+                    {{this.datePosted}}
+                    {{this.location}}
+                    {{this.description}}
+                    {{this.address}}
+                    {{this.compensation}}
+                </p>
+
+                {{/each}}
+            </ul>
+        </dib>
+    </div>
+
 </div>

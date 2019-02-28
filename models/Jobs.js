@@ -39,8 +39,16 @@ let JobSchema = new Schema ({
     compensation: {
         type: String,
         
-    }
-})
+    },
+    comment: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: "Comment"
+        }
+    ],
+    
+}, { timestamps: { createdAt: "created_at" } }
+);
 
 
 

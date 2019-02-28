@@ -8,9 +8,15 @@ let db = require("../models");
 // Url for scraping software jobs on craiglist NY
 const url = "https://newyork.craigslist.org/d/software-qa-dba-etc/search/sof";
 
-router.get("/", function(req, res) {
-    res.render("index", scrapeResults);
-})
+router.get("/", async (req, res) => {
+    try {
+        const dbData = await db.Jobs.find({});
+        res.status(200).render("index", {dbData});
+    } catch(error){
+        res.status(500).render("Not found");
+    }
+    
+});
 
 
 
@@ -107,7 +113,7 @@ router.get("/scrape", function (req, res) {
 })
 
 
-router.get("/jobs",  function(req, res) {
+router.get("/jobs",  (req, res) => {
      db.Jobs.find({})
      .then(function(dbJobs){
          res.json(dbJobs);
@@ -119,15 +125,15 @@ router.get("/jobs",  function(req, res) {
 
 })
 
-router.post("/jobs/:id", function(req, res){
-    db.Jobs.findOne({_id: req.params.id})
-    .then(function(dbJobs){
-        res.json(dbJobs);
-    })
-    .catch(function(error){
-        res.json(error);
-    })
-})
+// router.post("/jobs/:id", async(req, res) =>{
+//     db.Jobs.findOne({_id: req.params.id})
+//     .then(function(dbJobs){
+//         res.json(dbJobs);
+//     })
+//     .catch(function(error){
+//         res.json(error);
+//     })
+// })
 
 
 

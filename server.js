@@ -6,6 +6,7 @@ const mongoose = require("mongoose");
 
 const exphbs = require("express-handlebars");
 
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
 //Initializing axios for our http request
 //using cheerio to parse through DOM
 
@@ -30,7 +31,7 @@ app.engine("handlebars", exphbs({ defaultLayout: "main"}));
 app.set("view engine", "handlebars");
 
 //Connect to Mongo DB
-mongoose.connect("mongodb://localhost/webscrape");
+mongoose.connect(MONGODB_URI);
 
 //Require all db models
 let db = require("./models");
