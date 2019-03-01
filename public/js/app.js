@@ -2,12 +2,14 @@
 
 $(document).ready(function(){
     $("#webScrape").on("click", async function(){
+        
         try{
              await $.ajax({
                 type: "GET",
                 url: "/scrape"
             });
             window.location = "/scrape"
+            
         } catch(error){
             console.log(error);
         }
@@ -25,6 +27,4 @@ $(document).ready(function(){
             console.log(error);
         }
     });
-
-    
 })
