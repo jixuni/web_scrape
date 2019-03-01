@@ -8,9 +8,12 @@
             e.g title, time posted, urls. Then it will take all the urls and pass through an async function and return a promise when all the scrape is complete, this time grabbing
             job description, compensations and address from the individual page. Storing all data in mongodb.
         </p>
-        <p class="lead">
+        <span>
+        
             <a class="btn btn-primary btn-lg" href="#" role="button" onclick="fetchData();" id="webScrape">Scrape</a>
-        </p>
+        
+        </span>
+        
     </div>
     <div class=" row text-center">
         <dib class="col-12">
@@ -32,6 +35,10 @@
                     Job Adress: <b>{{this.address}}</b>
                     <br>
                     Compensations: <b>{{this.compensation}}</b>
+                    <br>
+                    <button data-id="{{this.id}}" class="delPost btn btn-danger">DELETE</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Comments</button>
+                    
                 </p>
 
                 {{/each}}

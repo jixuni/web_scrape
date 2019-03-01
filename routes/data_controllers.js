@@ -125,15 +125,26 @@ router.get("/jobs",  (req, res) => {
 
 })
 
-// router.post("/jobs/:id", async(req, res) =>{
-//     db.Jobs.findOne({_id: req.params.id})
-//     .then(function(dbJobs){
-//         res.json(dbJobs);
-//     })
-//     .catch(function(error){
-//         res.json(error);
-//     })
-// })
+router.put("/jobs/:id", async(req, res) =>{
+    db.Jobs.findOne({_id: req.params.id})
+    .then(function(dbJobs){
+        res.json(dbJobs);
+    })
+    .catch(function(error){
+        res.json(error);
+    })
+})
+
+
+router.delete("/jobs/:id", async (req, res) => {
+    try {
+      await db.Jobs.findByIdAndRemove({ _id: req.params.id });
+      if (!db) return res.status(404).send("Not found");
+      res.status(200).end();
+    } catch (ex) {
+      res.status(500).send("Server Error");
+    }
+  });
 
 
 
