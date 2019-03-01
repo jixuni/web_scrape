@@ -7,7 +7,6 @@ const mongoose = require("mongoose");
 const exphbs = require("express-handlebars");
 mongoose.connect(
     process.env.MONGODB_URI || "mongodb://localhost/webscrape",
-    
   );
 //Initializing axios for our http request
 //using cheerio to parse through DOM

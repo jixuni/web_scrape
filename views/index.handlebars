@@ -1,10 +1,13 @@
 <div class="container">
     <div class="jumbotron">
         <h1 class="display-4">Craiglist Job scraper</h1>
-        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to
-            featured content or information.</p>
+        <p class="lead"></p>
         <hr class="my-4">
-        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+        <p>This is a web scraper that will grab all the listings for software jobs on craiglist
+            . This app makes heavy use of promises. The initial scrape will grab all the listings on craiglist page and its relavent information
+            e.g title, time posted, urls. Then it will take all the urls and pass through an async function and return a promise when all the scrape is complete, this time grabbing
+            job description, compensations and address from the individual page. Storing all data in mongodb.
+        </p>
         <p class="lead">
             <a class="btn btn-primary btn-lg" href="#" role="button" onclick="fetchData();" id="webScrape">Scrape</a>
         </p>
@@ -15,14 +18,20 @@
             <ul>
                 {{#each dbData}}
 
-                <p><span class="label job_List"></span>
-                    {{this.title}}
-                    {{this.url}}
-                    {{this.datePosted}}
-                    {{this.location}}
-                    {{this.description}}
-                    {{this.address}}
-                    {{this.compensation}}
+                <p><span class="label job_List" id="jobTitle" ></span>
+                    Title: <b>{{this.title}}</b>
+                    <br>
+                    Job Url: <b>{{this.url}}</b>
+                    <br>
+                    Date Posted: <b>{{this.datePosted}}</b>
+                    <br>
+                    Job Location: <b>{{this.location}}</b>
+                    <br>
+                    Job Brief Description <b>{{this.description}}</b>
+                    <br>
+                    Job Adress: <b>{{this.address}}</b>
+                    <br>
+                    Compensations: <b>{{this.compensation}}</b>
                 </p>
 
                 {{/each}}
