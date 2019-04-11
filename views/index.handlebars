@@ -4,24 +4,26 @@
         <p class="lead"></p>
         <hr class="my-4">
         <p>This is a web scraper that will grab all the listings for software jobs on craiglist
-            . This app makes heavy use of promises. The initial scrape will grab all the listings on craiglist page and its relavent information
-            e.g title, time posted, urls. Then it will take all the urls and pass through an async function and return a promise when all the scrape is complete, this time grabbing
+            . This app makes heavy use of promises. The initial scrape will grab all the listings on craiglist page and
+            its relavent information
+            e.g title, time posted, urls. Then it will take all the urls and pass through an async function and return a
+            promise when all the scrape is complete, this time grabbing
             job description, compensations and address from the individual page. Storing all data in mongodb.
         </p>
         <span>
-        
+
             <a class="btn btn-primary btn-lg" href="#" role="button" id="webScrape">Scrape</a>
-        
+            <a class="btn btn-danger btn-lg" href="#" role="button" id="dropData">Delete All</a>
         </span>
-        
+
     </div>
     <div class=" row text-center">
         <dib class="col-12">
-            
+
             <ul>
                 {{#each dbData}}
 
-                <p><span class="label job_List" id="jobTitle" ></span>
+                <p><span class="label job_List" id="jobTitle"></span>
                     Title: <b>{{this.title}}</b>
                     <br>
                     Job Url: <b>{{this.url}}</b>
@@ -37,6 +39,7 @@
                     Compensations: <b>{{this.compensation}}</b>
                     <br>
                     <button data-id="{{this.id}}" class="delPost btn btn-danger">DELETE</button>
+
                 </p>
 
                 {{/each}}
