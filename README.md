@@ -1,6 +1,6 @@
 # web_scrape
 
-Still work in progres. This app I created to learn more about web scraping and and es6 syntax. This web scraping app
+Work in progres. This app I created to learn more about web scraping and and es6 syntax. This web scraping app
 will scrape all the url job listing on a craiglist page and then run another scrape on every single url it scrape and grabs the data from those urls.
 
 ## Getting Started
