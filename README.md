@@ -1,7 +1,9 @@
-# web_scrape
+# Job Scrape
 
 Work in progres. This app I created to learn more about web scraping and and es6 syntax. This web scraping app
 will scrape all the url job listing on a craiglist page and then run another scrape on every single url it scrape and grabs the data from those urls.
+
+If it does not show up initial refresh the page, the is scraping more than 100 web pages.
 
 ## Getting Started
 
